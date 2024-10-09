@@ -1,0 +1,11 @@
+# virtual environment folder with all libraries
+/myenv/
+
+
+# Python cache files, VS code settings and MacOS files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+.vscode/
