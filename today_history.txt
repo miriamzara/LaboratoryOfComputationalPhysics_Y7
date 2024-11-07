@@ -1,0 +1,16 @@
+ 1048  test_variable = 2
+ 1049  test_variable=2
+ 1050  echo $test_variable
+ 1051  ls -l ghost_variable 2>err.txt
+ 1052  more err.txt
+ 1053  more err.txt
+ 1054  ls -l ghost_variable 2>err.txt
+ 1055  more err.txt
+ 1056  ls -l err.txt > log.txt
+ 1057  more log.txt
+ 1058  bash
+ 1059  echo $SHELL
+ 1060  nano my_script.sh
+ 1061  chmod +x my_script.sh
+ 1062  ./my_script.sh output.txt
+ 1063  ./my_script.sh
