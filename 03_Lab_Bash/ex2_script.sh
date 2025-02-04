@@ -6,14 +6,19 @@ fi
 cp "./data.csv" "./data.txt"
 sed -i '' '/^#/d' data.txt #delete all the lines starting with # (metadata)
 sed -i '' 's/,/ /g' data.txt #substitute globally the character , with a whitespace " ", in-place (no new file created)
-# note: -i ' ' specifies to not create a backup of the current content of the file before doing the inplace replacement
+# note: " -i ' ' "" specifies to not create a backup of the current content of the file before doing the inplace replacement
 # it is mandatory on MacOS
 
 # 2.b: Count the even numbers
-
 even_counter=0
 odd_counter=0
-while IFS= read -r line; do 
+while IFS= read -r line; do  
+# Anatomy of the command:
+# IFS: stands for "Internal Field Separator" and is set to empty
+#           prevents _read_ from trimming or separating the lines based on
+#           tabs or other separators
+# -r: tells to treat the char "\" literally and not as escape characters
+# line: this is the variable where _read_ will store its output
     for field in $line; do # iterate through line fields, i.e. the blocks separated by whitespaces
         if (( field % 2 == 0 )); then
             ((even_counter++)); else
