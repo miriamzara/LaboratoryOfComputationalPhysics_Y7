@@ -46,6 +46,6 @@ echo "entries are $counter"
 
 for ((i=1; i<=n; i++)); do
     while IFS= read -r line; do
-        (echo "$line" | awk -v "divisor=$i" '{for (j=1; j<=NF; j++) $j=sprintf($j/divisor)}1') >> "data_copy_$i.txt"
+        (echo "$line" | awk -v "divisor=$i" '{for (j=1; j<=NF; j++) $j=sprintf($j/divisor)}1') >> "data_copy_{$i}.txt"
     done < data.txt
 done
